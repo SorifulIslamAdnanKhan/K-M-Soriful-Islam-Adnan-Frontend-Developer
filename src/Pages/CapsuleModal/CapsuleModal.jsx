@@ -8,7 +8,7 @@ const CapsuleModal = ({ isOpen, onClose, capsule }) => {
             <div className="fixed inset-0 flex items-center justify-center">
                 <div className="bg-indigo-200 rounded-lg p-6">
                     <div className="mb-4">
-                        <h2 className="text-lg font-medium">Modal Title</h2>
+                        <h2 className="text-lg font-medium">Capsule Details</h2>
                     </div>
                     <div className="mb-4 text-left text-slate-900">
                         <p className='text-lg'>Status: {status}</p>

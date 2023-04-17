@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import CapsuleModal from '../CapsuleModal/CapsuleModal';
+import Pagination from '../Pagination/Pagination';
 
 const Capsules = () => {
+
+    const [currentPage, setCurrentPage] = useState(1);
+    const [capsulesPerPage, setCapsulesPerPage] = useState(10);
 
     const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -62,6 +66,10 @@ const Capsules = () => {
         setFilteredCapsules(filteredData);
     }, [capsules, searchOne, searchTwo, searchThree]);
 
+    const lastPage = currentPage * capsulesPerPage;
+    const firstPage = lastPage - capsulesPerPage;
+    const currentCapsulesPerPage = filteredCapsules.slice(firstPage, lastPage)
+
     return (
         <div>
             <section className='py-8 p-4'>
@@ -91,9 +99,9 @@ const Capsules = () => {
             <section className='py-10 p-4'>
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4'>
                     {
-                        filteredCapsules.map(capsule => <div key={capsule.capsule_serial} className='text-left border p-2 rounded-lg shadow-lg shadow-slate-500/50'>
+                        currentCapsulesPerPage.map(capsule => <div key={capsule.capsule_serial} className='text-left border p-2 rounded-lg shadow-lg shadow-slate-500/50'>
                             <p className='text-lg'>Status: {capsule.status}</p>
-                            <p className='text-lg'> Original Launch: {capsule.original_launch}</p>
+                            <p className='text-lg'>Original Launch: {capsule.original_launch}</p>
                             <p className='text-lg'>Missions: {capsule.missions[0]?.name}</p>
                             <p className='text-lg'>Landing: {capsule.landings}</p>
                             <p className='text-lg'>Type: {capsule.type}</p>
@@ -104,18 +112,13 @@ const Capsules = () => {
                         </div>)
                     }
                 </div>
-                <div className='py-10 text-center grid grid-cols-5 md:grid-cols-10'>
-                    <span className='border px-6 py-2 bg-slate-100'>1</span>
-                    <span className='border px-6 py-2 bg-slate-100'>2</span>
-                    <span className='border px-6 py-2 bg-slate-100'>3</span>
-                    <span className='border px-6 py-2 bg-slate-100'>4</span>
-                    <span className='border px-6 py-2 bg-slate-100'>5</span>
-                    <span className='border px-6 py-2 bg-slate-100'>6</span>
-                    <span className='border px-6 py-2 bg-slate-100'>7</span>
-                    <span className='border px-6 py-2 bg-slate-100'>8</span>
-                    <span className='border px-6 py-2 bg-slate-100'>9</span>
-                    <span className='border px-6 py-2 bg-slate-100'>10</span>
-                </div>
+                <Pagination
+                    totalCapsules={capsules.length}
+                    capsulesPerPage={capsulesPerPage} 
+                    setCurrentPage={setCurrentPage}
+                    currentPage={currentPage}
+                >
+                </Pagination>
             </section>
         </div>
     );
