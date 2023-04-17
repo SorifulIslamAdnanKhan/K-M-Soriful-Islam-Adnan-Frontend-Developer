@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider';
+import { setAuthToken } from '../../hook/useAuthToken';
 
 const Login = () => {
     const {login} = useContext(AuthContext);
@@ -20,7 +21,7 @@ const Login = () => {
         login(email, password)
         .then(result =>{
             const user = result.user;
-            console.log(user);
+            setAuthToken(user);
             form.reset();
             navigate(from, {replace: true})
         })
@@ -43,7 +44,7 @@ const Login = () => {
                     <input type='password' className='w-full py-4 p-2 rounded-md border' placeholder='Enter Your Password' name='password' required />
                 </div>
                 <button className='rounded-md bg-indigo-700 hover:bg-slate-950 w-full mt-4 py-4 text-lg text-white' type='submit'>Login</button>
-                <p className='text-sm text-red-600'>{error}</p>
+                <p className='text-sm mt-4 text-red-600'>{error}</p>
                 <p className='text-lg mt-4'>Don't have an account. Please <Link to='/signup' className='text-blue-400'>Register</Link>!</p>
             </form>
         </div>
