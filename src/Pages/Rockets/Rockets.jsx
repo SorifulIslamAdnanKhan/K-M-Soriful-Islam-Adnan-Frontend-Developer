@@ -15,8 +15,8 @@ const Rockets = () => {
                     <p className='text-lg'>Year of Used</p>
                     <p className='text-lg'>Seller Mobile</p>
                     <p className='text-lg'>Location</p>
-                    <div className='py-4'>
-                        <label htmlFor='rocket-modal' className='rounded-md text-white bg-slate-950 hover:bg-indigo-700 p-4 text-lg'>View Details</label>
+                    <div className='py-6'>
+                        <button  className='w-full rounded-md text-white bg-slate-950 hover:bg-indigo-700 p-4 text-sm'>View Details</button>
                     </div>
                 </div>
                 <div className='text-center border p-2 rounded-lg shadow-lg shadow-slate-500/50'>
@@ -29,8 +29,8 @@ const Rockets = () => {
                     <p className='text-lg'>Year of Used</p>
                     <p className='text-lg'>Seller Mobile</p>
                     <p className='text-lg'>Location</p>
-                    <div className='py-4'>
-                        <label htmlFor='rocket-modal' className='rounded-md text-white bg-slate-950 hover:bg-indigo-700 p-4 text-lg'>View Detaild</label>
+                    <div className='py-6'>
+                        <button  className='w-full rounded-md text-white bg-slate-950 hover:bg-indigo-700 p-4 text-sm'>View Details</button>
                     </div>
                 </div>
                 <div className='text-center border p-2 rounded-lg shadow-lg shadow-slate-500/50'>
@@ -43,8 +43,8 @@ const Rockets = () => {
                     <p className='text-lg'>Year of Used</p>
                     <p className='text-lg'>Seller Mobile</p>
                     <p className='text-lg'>Location</p>
-                    <div className='py-4'>
-                        <label htmlFor='rocket-modal' className='rounded-md text-white bg-slate-950 hover:bg-indigo-700 p-4 text-lg'>View Details</label>
+                    <div className='py-6'>
+                        <button  className='w-full rounded-md text-white bg-slate-950 hover:bg-indigo-700 p-4 text-sm'>View Details</button>
                     </div>
                 </div>
                 <div className='text-center border p-2 rounded-lg shadow-lg shadow-slate-500/50'>
@@ -57,8 +57,8 @@ const Rockets = () => {
                     <p className='text-lg'>Year of Used</p>
                     <p className='text-lg'>Seller Mobile</p>
                     <p className='text-lg'>Location</p>
-                    <div className='py-4'>
-                        <label htmlFor='rocket-modal' className='rounded-md text-white bg-slate-950 hover:bg-indigo-700 p-4 text-lg'>View Details</label>
+                    <div className='py-6'>
+                        <button  className='w-full rounded-md text-white bg-slate-950 hover:bg-indigo-700 p-4 text-sm'>View Details</button>
                     </div>
                 </div>
                 <div className='text-center border p-2 rounded-lg shadow-lg shadow-slate-500/50'>
@@ -71,8 +71,8 @@ const Rockets = () => {
                     <p className='text-lg'>Year of Used</p>
                     <p className='text-lg'>Seller Mobile</p>
                     <p className='text-lg'>Location</p>
-                    <div className='py-4'>
-                        <label htmlFor='rocket-modal' className='rounded-md text-white bg-slate-950 hover:bg-indigo-700 p-4 text-lg'>View Details</label>
+                    <div className='py-6'>
+                        <button  className='w-full rounded-md text-white bg-slate-950 hover:bg-indigo-700 p-4 text-sm'>View Details</button>
                     </div>
                 </div>
                 <div className='text-center border p-2 rounded-lg shadow-lg shadow-slate-500/50'>
@@ -85,8 +85,8 @@ const Rockets = () => {
                     <p className='text-lg'>Year of Used</p>
                     <p className='text-lg'>Seller Mobile</p>
                     <p className='text-lg'>Location</p>
-                    <div className='py-4'>
-                        <label htmlFor='rocket-modal' className='rounded-md text-white bg-slate-950 hover:bg-indigo-700 p-4 text-lg'>View Details</label>
+                    <div className='py-6'>
+                        <button className='w-full rounded-md text-white bg-slate-950 hover:bg-indigo-700 p-4 text-sm'>View Details</button>
                     </div>
                 </div>
             </div>

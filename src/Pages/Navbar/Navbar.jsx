@@ -1,10 +1,21 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import {Bars3BottomRightIcon,XMarkIcon} from "@heroicons/react/24/solid";
+import { Bars3BottomRightIcon, XMarkIcon } from "@heroicons/react/24/solid";
+import { AuthContext } from '../../context/AuthProvider';
 
 
 const Navbar = () => {
+
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    
+    const { user, logout } = useContext(AuthContext);
+
+    const handleLogout = () => {
+        logout()
+            .then(() => { })
+            .catch(error => console.log(error));
+    }
+
     return (
         <header>
             <div className="mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl">
@@ -21,12 +32,21 @@ const Navbar = () => {
                         <li>
                             <NavLink to='/' className={({ isActive }) => (isActive ? 'text-blue-600' : 'text-slate-950')}>Home</NavLink>
                         </li>
-                        <li>
-                            <NavLink to='/login' className={({ isActive }) => (isActive ? 'text-blue-600' : 'text-slate-950')}>Login</NavLink>
-                        </li>
-                        <li>
-                            <NavLink to='/signup' className={({ isActive }) => (isActive ? 'text-blue-600' : 'text-slate-950')}>Signup</NavLink>
-                        </li>
+                        {
+                            user?.uid ?
+                                <>
+                                    <li><button onClick={handleLogout}>Logout</button></li>
+                                </>
+                                :
+                                <>
+                                    <li>
+                                        <NavLink to='/login' className={({ isActive }) => (isActive ? 'text-blue-600' : 'text-slate-950')}>Login</NavLink>
+                                    </li>
+                                    <li>
+                                        <NavLink to='/signup' className={({ isActive }) => (isActive ? 'text-blue-600' : 'text-slate-950')}>Signup</NavLink>
+                                    </li>
+                                </>
+                        }
                     </ul>
 
                     {/* Mobile Navbar Section */}
