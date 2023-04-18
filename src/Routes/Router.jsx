@@ -5,6 +5,7 @@ import Home from '../Pages/Home/Home';
 import Login from '../Pages/Login/Login';
 import Signup from '../Pages/Signup/Signup';
 import Error from '../Error/Error';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
 
   export const router = createBrowserRouter([
         {
@@ -14,7 +15,7 @@ import Error from '../Error/Error';
             children:[
                 {
                     path: '/',
-                    element: <Home></Home>
+                    element: <PrivateRoute><Home></Home></PrivateRoute>
                 },
                 {
                     path: '/login',

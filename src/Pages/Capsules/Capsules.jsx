@@ -73,7 +73,7 @@ const Capsules = () => {
     return (
         <div>
             <section className='py-8 p-4'>
-                <h2 className='text-center text-xl p-4 font-bold'>Please Search Rockets</h2>
+                <h2 className='text-center text-xl p-4 font-bold'>Please Search Capsules</h2>
                 <div className='md:flex justify-evenly items-center py-8 p-4 gap-3 text-center'>
                     <input
                         value={searchOne}
