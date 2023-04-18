@@ -6,20 +6,10 @@ const Capsules = () => {
 
     const [currentPage, setCurrentPage] = useState(1);
     const [capsulesPerPage, setCapsulesPerPage] = useState(10);
-
-    const [isModalOpen, setIsModalOpen] = useState(false);
-
-    const handleModalClose = () => {
-        setIsModalOpen(false);
-    }
-
     const [singleCapsule, setSingleCapsule] = useState([]);
-
-    const handleClick = (capsule) => {
-        setIsModalOpen(true);
-        setSingleCapsule(capsule);
-    };
-
+    
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    
     const [capsules, setCapsules] = useState([]);
 
     const [searchOne, setSearchOne] = useState("");
@@ -27,6 +17,17 @@ const Capsules = () => {
     const [searchThree, setSearchThree] = useState("");
     const [filteredCapsules, setFilteredCapsules] = useState([]);
 
+    // Modal
+    const handleModalClose = () => {
+        setIsModalOpen(false);
+    }
+
+    const handleClick = (capsule) => {
+        setIsModalOpen(true);
+        setSingleCapsule(capsule);
+    };
+
+    // Fetch API data
     const url = 'https://api.spacexdata.com/v3/capsules';
 
     useEffect(() => {
@@ -39,6 +40,7 @@ const Capsules = () => {
             })
     }, []);
 
+    // Search functionality
     const handleSearchOne = (event) => {
         setSearchOne(event.target.value);
     };
@@ -66,14 +68,16 @@ const Capsules = () => {
         setFilteredCapsules(filteredData);
     }, [capsules, searchOne, searchTwo, searchThree]);
 
+    // Pagination functionality
     const lastPage = currentPage * capsulesPerPage;
     const firstPage = lastPage - capsulesPerPage;
     const currentCapsulesPerPage = filteredCapsules.slice(firstPage, lastPage)
 
     return (
         <div>
+            {/* Search section*/}
             <section className='py-8 p-4'>
-                <h2 className='text-center text-xl p-4 font-bold'>Please Search Capsules</h2>
+                <h2 className='text-center text-2xl p-4 font-bold'>Please Search Capsules</h2>
                 <div className='md:flex justify-evenly items-center py-8 p-4 gap-3 text-center'>
                     <input
                         value={searchOne}
@@ -96,6 +100,8 @@ const Capsules = () => {
                         placeholder=' Rockets By Type' />
                 </div>
             </section>
+
+            {/* Capsule cards section*/}
             <section className='py-10 p-4'>
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4'>
                     {
@@ -112,6 +118,8 @@ const Capsules = () => {
                         </div>)
                     }
                 </div>
+
+                {/* Pagination section*/}
                 <Pagination
                     totalCapsules={capsules.length}
                     capsulesPerPage={capsulesPerPage} 

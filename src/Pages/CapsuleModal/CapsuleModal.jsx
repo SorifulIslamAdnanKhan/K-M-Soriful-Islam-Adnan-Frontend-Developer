@@ -1,7 +1,9 @@
 import React from 'react';
 
 const CapsuleModal = ({ isOpen, onClose, capsule }) => {
+    
     const {status, original_launch, missions, landings, type, details} = capsule;
+
     return (
         <div className={`fixed inset-0 z-10 ${isOpen ? 'block' : 'hidden'}`}>
             <div className="fixed inset-0 opacity-25"></div>
