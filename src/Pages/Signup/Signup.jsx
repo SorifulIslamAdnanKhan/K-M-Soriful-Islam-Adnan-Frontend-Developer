@@ -49,7 +49,7 @@ const Signup = () => {
                     <label>Password</label><br />
                     <input type='password' className='w-full py-4 p-2 rounded-md border' placeholder='Enter Your Password' name='password' required />
                 </div>
-                <button className='rounded-md bg-indigo-700 hover:bg-slate-950 w-full mt-4 py-4 text-lg text-white' type='submit'>Login</button>
+                <button className='rounded-md bg-indigo-700 hover:bg-slate-950 w-full mt-4 py-4 text-lg text-white' type='submit'>Register</button>
                 <p className='text-sm mt-4 text-red-600'>{error}</p>
                 <p className='text-lg mt-4'>Already have an account. Please <Link to='/login' className='text-blue-400'>Login</Link>!</p>
             </form>
