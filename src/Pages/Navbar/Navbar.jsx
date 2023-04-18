@@ -7,7 +7,7 @@ import { AuthContext } from '../../context/AuthProvider';
 const Navbar = () => {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    
+
     const { user, logout } = useContext(AuthContext);
 
     const handleLogout = () => {
@@ -49,9 +49,9 @@ const Navbar = () => {
                         }
                     </ul>
 
-                    {/* Mobile Navbar Section */}
+                    {/* Mobile navbar section */}
                     <div className="lg:hidden">
-                        {/* Dropdown Open Button */}
+                        {/* Dropdown open button */}
                         <button
                             aria-label="Open Menu"
                             title="Open Menu"
@@ -62,7 +62,7 @@ const Navbar = () => {
                         {isMenuOpen && (
                             <div className="absolute top-0 left-0 w-full z-10">
                                 <div className="p-5 bg-white border rounded shadow-sm">
-                                    {/* Logo & Button section */}
+                                    {/* Logo & button section */}
                                     <div className="flex items-center justify-between mb-4">
                                         <div>
                                             <Link to="/" className="inline-flex items-center">
@@ -82,7 +82,7 @@ const Navbar = () => {
                                             </button>
                                         </div>
                                     </div>
-                                    {/* Mobile Nav Items Section */}
+                                    {/* Mobile nav items section */}
                                     <nav>
                                         <ul className="space-y-4">
                                             <li>
