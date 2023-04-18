@@ -88,12 +88,21 @@ const Navbar = () => {
                                             <li>
                                                 <Link to="/" className="default">Home</Link>
                                             </li>
-                                            <li>
-                                                <Link to='/login' className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-400">Login</Link>
-                                            </li>
-                                            <li>
-                                                <Link to='/signup' className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-400">Signup</Link>
-                                            </li>
+                                            {
+                                                user?.uid ?
+                                                    <>
+                                                        <li><button onClick={handleLogout}>Logout</button></li>
+                                                    </>
+                                                    :
+                                                    <>
+                                                        <li>
+                                                            <Link to='/login' className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-400">Login</Link>
+                                                        </li>
+                                                        <li>
+                                                            <Link to='/signup' className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-400">Signup</Link>
+                                                        </li>
+                                                    </>
+                                            }
                                         </ul>
                                     </nav>
                                 </div>
