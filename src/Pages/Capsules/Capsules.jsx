@@ -6,8 +6,8 @@ const Capsules = () => {
 
     const [currentPage, setCurrentPage] = useState(1);
     const [capsulesPerPage, setCapsulesPerPage] = useState(10);
-    const [singleCapsule, setSingleCapsule] = useState([]);
     
+    const [singleCapsule, setSingleCapsule] = useState([]);
     const [isModalOpen, setIsModalOpen] = useState(false);
     
     const [capsules, setCapsules] = useState([]);
