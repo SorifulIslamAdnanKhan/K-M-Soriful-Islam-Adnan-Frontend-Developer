@@ -6,7 +6,7 @@ export const setAuthToken = (user) =>{
 
     // Get JWT token from server
 
-    fetch(`http://localhost:5000/jwt`, {
+    fetch(`https://spx-rocket-app-server.vercel.app/jwt`, {
         method:'POST',
         headers:{
             'content-type': 'application/json'

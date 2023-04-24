@@ -1,7 +1,8 @@
 # Project Details
 
 # Name: SPX Rocket App
-# Live Website:
+# Live Website: https://spx-rocket-app-7dcef.web.app/
+# Project Video URL: https://user-images.githubusercontent.com/108855743/232735863-38661c95-cd65-4a94-8b11-fdc600670f8e.mp4
 
 # Features
     * User can register and login to the website.
